@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_N_kPkEcFEeu5wYJY2k5onA" name="Elearning">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_OKr6cEcFEeu5wYJY2k5onA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Node" xmi:id="_hiBzgFqWEeu2kb4EnSyQ0A" name="Database">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_PBNuQFqXEeu2kb4EnSyQ0A" name="Elearning Database"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_kqvQ4FqWEeu2kb4EnSyQ0A" name="Client">
+    <nestedNode xmi:type="uml:Device" xmi:id="_l7M9wFqXEeu2kb4EnSyQ0A" name="Student"/>
+    <nestedNode xmi:type="uml:Device" xmi:id="_n1AYAFqXEeu2kb4EnSyQ0A" name="Teacher"/>
+    <nestedNode xmi:type="uml:Device" xmi:id="_qCIW4FqXEeu2kb4EnSyQ0A" name="Admin"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_WDmL4FqXEeu2kb4EnSyQ0A" name="Server">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_167w4FqXEeu2kb4EnSyQ0A" name="Elearning"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_iie5AFqYEeu2kb4EnSyQ0A" name="ODBC" memberEnd="_iioC8FqYEeu2kb4EnSyQ0A _iiuJkFqYEeu2kb4EnSyQ0A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iik_oFqYEeu2kb4EnSyQ0A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iilmsFqYEeu2kb4EnSyQ0A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_iioC8FqYEeu2kb4EnSyQ0A" name="server" type="_WDmL4FqXEeu2kb4EnSyQ0A" association="_iie5AFqYEeu2kb4EnSyQ0A"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_iiuJkFqYEeu2kb4EnSyQ0A" name="database" type="_hiBzgFqWEeu2kb4EnSyQ0A" association="_iie5AFqYEeu2kb4EnSyQ0A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_rSJX0FqYEeu2kb4EnSyQ0A" name="HTTP" memberEnd="_rSMbIFqYEeu2kb4EnSyQ0A _rSNpQFqYEeu2kb4EnSyQ0A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rSKl8FqYEeu2kb4EnSyQ0A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rSLNAFqYEeu2kb4EnSyQ0A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rSMbIFqYEeu2kb4EnSyQ0A" name="client" type="_kqvQ4FqWEeu2kb4EnSyQ0A" association="_rSJX0FqYEeu2kb4EnSyQ0A"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rSNpQFqYEeu2kb4EnSyQ0A" name="server" type="_WDmL4FqXEeu2kb4EnSyQ0A" association="_rSJX0FqYEeu2kb4EnSyQ0A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_zggq8FqZEeu2kb4EnSyQ0A" name="Teacher">
+    <region xmi:type="uml:Region" xmi:id="_0QOQoFqZEeu2kb4EnSyQ0A" name="teacher:Teacher">
+      <transition xmi:type="uml:Transition" xmi:id="_NhdSEFqfEeu2kb4EnSyQ0A" name="Registration approved" source="_AFkuAFqaEeu2kb4EnSyQ0A" target="_CNh5AFqaEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Wj9NUFqfEeu2kb4EnSyQ0A" name="[No registration]/Request Registration" source="_9-rS8FqZEeu2kb4EnSyQ0A" target="_AFkuAFqaEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_ZTTIcFqfEeu2kb4EnSyQ0A" name="End Registration" source="_CNh5AFqaEeu2kb4EnSyQ0A" target="_9-rS8FqZEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_cRszQFqfEeu2kb4EnSyQ0A" name="Course Offered" source="_8ikhUFqZEeu2kb4EnSyQ0A" target="_9-rS8FqZEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_WAx4sFqoEeu2kb4EnSyQ0A" name="[Not Approved]" source="_AFkuAFqaEeu2kb4EnSyQ0A" target="_PYt_kFqoEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_bwt3AFqoEeu2kb4EnSyQ0A" name="Reject Request" source="_PYt_kFqoEeu2kb4EnSyQ0A" target="_9-rS8FqZEeu2kb4EnSyQ0A"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_8ikhUFqZEeu2kb4EnSyQ0A" name="Start"/>
+      <subvertex xmi:type="uml:State" xmi:id="_9-rS8FqZEeu2kb4EnSyQ0A" name="Idle"/>
+      <subvertex xmi:type="uml:State" xmi:id="_AFkuAFqaEeu2kb4EnSyQ0A" name="Register"/>
+      <subvertex xmi:type="uml:State" xmi:id="_CNh5AFqaEeu2kb4EnSyQ0A" name="Teaching"/>
+      <subvertex xmi:type="uml:State" xmi:id="_PYt_kFqoEeu2kb4EnSyQ0A" name="Reject"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_4GdBsFqhEeu2kb4EnSyQ0A" name="Student">
+    <region xmi:type="uml:Region" xmi:id="_mClXIFqiEeu2kb4EnSyQ0A" name="student:Student">
+      <transition xmi:type="uml:Transition" xmi:id="_CiMV4FqkEeu2kb4EnSyQ0A" name="Register Course" source="_eLRnMFqjEeu2kb4EnSyQ0A" target="_nDrAsFqiEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_KZj6wFqkEeu2kb4EnSyQ0A" name="Approved" source="_nDrAsFqiEeu2kb4EnSyQ0A" target="_wZRosFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_NUUbsFqkEeu2kb4EnSyQ0A" name="Recieved" source="_wZRosFqjEeu2kb4EnSyQ0A" target="_jOSOEFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_rir3wFqkEeu2kb4EnSyQ0A" name="[Payment&lt;Fees]/Request" source="_wZRosFqjEeu2kb4EnSyQ0A" target="_lQUh0FqkEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_v0fEIFqkEeu2kb4EnSyQ0A" name="Recieved" source="_lQUh0FqkEeu2kb4EnSyQ0A" target="_jOSOEFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_1a7vQFqkEeu2kb4EnSyQ0A" name="Exams" source="_jOSOEFqjEeu2kb4EnSyQ0A" target="_nT2VQFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_9YfbsFqkEeu2kb4EnSyQ0A" name="Exams Finished" source="_nT2VQFqjEeu2kb4EnSyQ0A" target="_jOSOEFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_K8aTsFqlEeu2kb4EnSyQ0A" name="Registration End" source="_jOSOEFqjEeu2kb4EnSyQ0A" target="__g4hAFqjEeu2kb4EnSyQ0A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Nu964FqlEeu2kb4EnSyQ0A" name="[Not Approved]" source="_nDrAsFqiEeu2kb4EnSyQ0A" target="__g4hAFqjEeu2kb4EnSyQ0A"/>
+      <subvertex xmi:type="uml:State" xmi:id="_nDrAsFqiEeu2kb4EnSyQ0A" name="Registration"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_eLRnMFqjEeu2kb4EnSyQ0A" name=""/>
+      <subvertex xmi:type="uml:State" xmi:id="_jOSOEFqjEeu2kb4EnSyQ0A" name="Learning"/>
+      <subvertex xmi:type="uml:State" xmi:id="_nT2VQFqjEeu2kb4EnSyQ0A" name="Quizes"/>
+      <subvertex xmi:type="uml:State" xmi:id="_wZRosFqjEeu2kb4EnSyQ0A" name="Payment"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="__g4hAFqjEeu2kb4EnSyQ0A"/>
+      <subvertex xmi:type="uml:State" xmi:id="_lQUh0FqkEeu2kb4EnSyQ0A" name="Request Payment"/>
+    </region>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_P9GqkFqeEeu2kb4EnSyQ0A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P9IfwFqeEeu2kb4EnSyQ0A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
