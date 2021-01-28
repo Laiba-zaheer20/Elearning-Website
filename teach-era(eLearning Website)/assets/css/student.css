@@ -1,0 +1,11 @@
+img:hover {
+    position: relative;
+    top: -4px;
+    transform: scale(1.5);
+}
+
+img:active {
+    position: relative;
+    top: 0px;
+    transform: scale(1.8);
+}

@@ -1,0 +1,32 @@
+.label {
+    color: #e14eca;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(to right, #ccc 50%, #e14eca 50%, #cc2e5d);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s ease-out;
+}
+
+.label:hover {
+    background-position: -100%;
+}
+
+.btn-primary {
+    background: #50b948;
+    border-color: #33912c;
+}
+
+img:hover {
+    position: relative;
+    top: -4px;
+    transform: scale(1.1);
+}
+
+img:active {
+    position: relative;
+    top: 0px;
+    transform: scale(1.2);
+}
